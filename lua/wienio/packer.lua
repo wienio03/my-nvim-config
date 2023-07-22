@@ -15,7 +15,14 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/playground'
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
-    use {
+    use 'nvim-tree/nvim-tree.lua'
+    use 'lewis6991/gitsigns.nvim'
+    use 'romgrk/barbar.nvim'
+    use 'tpope/vim-fugitive'
+    use 'nvim-tree/nvim-web-devicons'
+    use 'kosayoda/nvim-lightbulb'
+    use 'ellisonleao/gruvbox.nvim'
+     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         requires = {
@@ -35,18 +42,12 @@ return require('packer').startup(function(use)
         {'L3MON4D3/LuaSnip'},     -- Required
     }
 }
-    use 'nvim-tree/nvim-tree.lua'
-    use 'lewis6991/gitsigns.nvim'
-    use 'romgrk/barbar.nvim'
-    use 'tpope/vim-fugitive'
-    use 'nvim-tree/nvim-web-devicons'
-    use 'kosayoda/nvim-lightbulb'
-    use 'ellisonleao/gruvbox.nvim'
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 
     }
     use {"akinsho/toggleterm.nvim", tag = '*', config = function() require("toggleterm").setup() end}
-
+    use 'alvan/vim-closetag'
+    use 'tpope/vim-surround'
 end)
