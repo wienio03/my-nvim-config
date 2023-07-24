@@ -54,4 +54,5 @@ return require('packer').startup(function(use)
     use 'rcarriga/nvim-dap-ui'
     use 'mfussenegger/nvim-dap'
     use 'theHamsta/nvim-dap-virtual-text'
+    use 'barrett-ruth/live-server.nvim'
 end)
