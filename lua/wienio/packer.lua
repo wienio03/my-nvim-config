@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
-    use 'nvim-treesitter/playground'
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
     use 'nvim-tree/nvim-tree.lua'
@@ -50,6 +49,9 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*', config = function() require("toggleterm").setup() end}
     use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
-    use 'saadparawaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'rcarriga/nvim-dap-ui'
+    use 'mfussenegger/nvim-dap'
+    use 'theHamsta/nvim-dap-virtual-text'
 end)

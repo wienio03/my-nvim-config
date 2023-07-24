@@ -8,4 +8,4 @@ require("nvim-lightbulb").setup({
 --gruvbox
 vim.o.background = "dark"
 vim.cmd("colorscheme gruvbox")
-require'lspconfig'.html.setup{}
+require("dapui").setup()
