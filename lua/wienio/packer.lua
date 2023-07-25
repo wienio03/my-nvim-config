@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-
+    use 'Mofiqul/vscode.nvim'
     -- Simple plugins can be specified as strings
     use 'rstacruz/vim-closer'
     use {
@@ -55,4 +55,20 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'barrett-ruth/live-server.nvim'
+    use {'jay-babu/mason-nvim-dap.nvim', config =
+    function()
+        local dapui = require("dapui")
+        local dap = require("dap")
+        dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open()
+        end
+        dap.listeners.before.event_initialized["dapui_config"] = function()
+            dapui.close()
+        end
+        dap.listeners.before.event_initialized["dapui_config"] = function()
+            dapui.close()
+        end
+    end
+    }
+    use 'brenoprata10/nvim-highlight-colors'
 end)
