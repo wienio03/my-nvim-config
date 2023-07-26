@@ -57,4 +57,5 @@ return require('packer').startup(function(use)
     use 'barrett-ruth/live-server.nvim'
     use 'jay-babu/mason-nvim-dap.nvim'
     use 'norcalli/nvim-colorizer.lua'
+    use 'navarasu/onedark.nvim'
 end)
