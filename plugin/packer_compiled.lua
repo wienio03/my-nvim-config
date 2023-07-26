@@ -135,7 +135,6 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason-nvim-dap.nvim"] = {
-    config = { "\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\nclose®\1\1\0\4\0\v\0\0236\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0019\2\4\0029\2\5\0023\3\a\0=\3\6\0029\2\3\0019\2\b\0029\2\5\0023\3\t\0=\3\6\0029\2\3\0019\2\b\0029\2\5\0023\3\n\0=\3\6\0022\0\0€K\0\1\0\0\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\bdap\ndapui\frequire\0" },
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
     url = "https://github.com/jay-babu/mason-nvim-dap.nvim"
@@ -249,10 +248,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: mason-nvim-dap.nvim
-time([[Config for mason-nvim-dap.nvim]], true)
-try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\0À\nclose®\1\1\0\4\0\v\0\0236\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0019\2\4\0029\2\5\0023\3\a\0=\3\6\0029\2\3\0019\2\b\0029\2\5\0023\3\t\0=\3\6\0029\2\3\0019\2\b\0029\2\5\0023\3\n\0=\3\6\0022\0\0€K\0\1\0\0\0\vbefore\0\17dapui_config\22event_initialized\nafter\14listeners\bdap\ndapui\frequire\0", "config", "mason-nvim-dap.nvim")
-time([[Config for mason-nvim-dap.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
