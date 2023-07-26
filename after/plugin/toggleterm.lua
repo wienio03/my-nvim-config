@@ -1,1 +1,2 @@
-vim.keymap.set('n', '<leader>tr', vim.cmd.ToggleTerm)
+vim.keymap.set('n', '<leader>tt', vim.cmd.ToggleTerm)
+

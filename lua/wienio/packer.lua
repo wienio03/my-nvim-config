@@ -58,4 +58,21 @@ return require('packer').startup(function(use)
     use 'jay-babu/mason-nvim-dap.nvim'
     use 'norcalli/nvim-colorizer.lua'
     use 'navarasu/onedark.nvim'
+    use 'Zeioth/compiler.nvim'
+     use {
+      'stevearc/overseer.nvim',
+      config = function() require('overseer').setup() end
+    }
+    use 'stevearc/dressing.nvim'
+      use {
+    "rcarriga/nvim-notify",
+    config = function ()
+      require("notify").setup {
+        stages = "fade",
+        background_colour = 'FloatShadow',
+        timeout = 3000,
+      }
+      vim.notify = require('notify')
+    end
+  }
 end)

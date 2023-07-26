@@ -1,6 +1,5 @@
 require('wienio.remap')
 require('wienio.set')
-print('init loaded')
 --lightbulb
 require("nvim-lightbulb").setup({
   autocmd = { enabled = true }
@@ -51,3 +50,8 @@ require('onedark').setup  {
     },
 }
 require('onedark').load()
+vim.opt.termguicolors = true
+
+      vim.notify = require('notify')
+
+require("notify")("init.lua loaded successfully")

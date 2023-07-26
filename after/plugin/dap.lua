@@ -1,7 +1,12 @@
 --bindings
 vim.api.nvim_set_keymap('n', '<leader>dt', ':lua require("dapui").open()<CR>', {noremap=true})
-vim.api.nvim_set_keymap('n', '<leader>db', 'DapToggleBreakpoint<CR>', {noremap=true})
 vim.api.nvim_set_keymap('n', '<leader>dc', ':lua require("dapui").close()<CR>', {noremap=true})
+vim.keymap.set('n', '<leader>db', vim.cmd.DapToggleBreakpoint)
+vim.keymap.set('n', '<leader><F8>', vim.cmd.DapContinue)
+vim.keymap.set('n', '<leader><F7>', vim.cmd.DapStepInto)
+vim.keymap.set('n', '<leader><F6>', vim.cmd.DapStepOver)
+vim.keymap.set('n', '<leader><F5>', vim.cmd.DapStepOut)
+vim.keymap.set('n', '<leader>dx', vim.cmd.DapTerminate)
 --configuration of CPP debugger
 local dap_ok, dap = pcall(require, "dap")
 if not (dap_ok) then
@@ -9,8 +14,7 @@ if not (dap_ok) then
     return
 end
 
-require('dap').set_log_level('INFO') -- Helps when configuring DAP, see logs with :DapShowLog
-
+require('dap').set_log_level('INFO')
 dap.configurations = {
     cpp = {
         {
