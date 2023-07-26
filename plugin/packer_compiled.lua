@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-dap",
@@ -163,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
-  },
-  ["nvim-highlight-colors"] = {
-    loaded = true,
-    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-highlight-colors",
-    url = "https://github.com/brenoprata10/nvim-highlight-colors"
   },
   ["nvim-lightbulb"] = {
     loaded = true,

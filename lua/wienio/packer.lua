@@ -56,5 +56,5 @@ return require('packer').startup(function(use)
     use 'theHamsta/nvim-dap-virtual-text'
     use 'barrett-ruth/live-server.nvim'
     use 'jay-babu/mason-nvim-dap.nvim'
-    use 'brenoprata10/nvim-highlight-colors'
+    use 'norcalli/nvim-colorizer.lua'
 end)
