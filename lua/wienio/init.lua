@@ -55,3 +55,5 @@ vim.opt.termguicolors = true
       vim.notify = require('notify')
 
 require("notify")("init.lua loaded successfully")
+vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
