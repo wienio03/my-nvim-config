@@ -1,24 +1,16 @@
-require 'colorizer'.setup()
+require('colorizer').setup{
+    css = {
+        mode = 'background',
+        rgb_fn = true,
+    };
 
-require 'colorizer'.setup {
-  'css';
-  'javascript';
-  html = {
-    mode = 'foreground';
-  }
-}
+    javascript = {
+        mode = 'background',
+        rgb_fn = true,
+    };
 
-require 'colorizer'.setup({
-  'css';
-  'javascript';
-  html = { mode = 'background' };
-}, { mode = 'foreground' })
-
-require 'colorizer'.setup {
-  '*';   css = { rgb_fn = true; };   html = { names = false; } 
-}
-
-require 'colorizer'.setup {
-  '*'; 
-  '!vim'; 
+    html = {
+        mode = 'background',
+        rgb_fn = true,
+    }
 }

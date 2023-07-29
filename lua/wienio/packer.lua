@@ -1,7 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
-    -- Packer can manage itself
+-- Packer can manage itself,
     use 'wbthomason/packer.nvim'
     use 'Mofiqul/vscode.nvim'
     -- Simple plugins can be specified as strings
@@ -11,7 +10,6 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
     use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
@@ -35,7 +33,6 @@ return require('packer').startup(function(use)
             end,
         },
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
         -- Autocompletion
         {'hrsh7th/nvim-cmp'},     -- Required
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
@@ -66,4 +63,9 @@ return require('packer').startup(function(use)
     }
     use 'stevearc/dressing.nvim'
     use "rcarriga/nvim-notify"
+    use 'Dhanus3133/LeetBuddy.nvim'
+    use 'neanias/everforest-nvim'
+    use 'mhinz/vim-startify'
+    use 'tomasiser/vim-code-dark'
+    use 'mhartington/formatter.nvim'
 end)

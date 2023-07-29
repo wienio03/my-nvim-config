@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["LeetBuddy.nvim"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/LeetBuddy.nvim",
+    url = "https://github.com/Dhanus3133/LeetBuddy.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -103,6 +108,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/dressing.nvim",
     url = "https://github.com/stevearc/dressing.nvim"
+  },
+  ["everforest-nvim"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/everforest-nvim",
+    url = "https://github.com/neanias/everforest-nvim"
+  },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -256,10 +271,20 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-closetag",
     url = "https://github.com/alvan/vim-closetag"
   },
+  ["vim-code-dark"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-code-dark",
+    url = "https://github.com/tomasiser/vim-code-dark"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["vim-surround"] = {
     loaded = true,
