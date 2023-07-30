@@ -19,7 +19,7 @@ end
 polish()
 vim.notify = require('notify')
 require("notify")("init.lua loaded successfully")
-vim.cmd('colorscheme codedark')
+vim.cmd('colorscheme gruvbox')
 
 
 

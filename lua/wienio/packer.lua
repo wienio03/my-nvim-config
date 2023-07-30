@@ -67,4 +67,5 @@ return require('packer').startup(function(use)
     use 'neanias/everforest-nvim'
     use 'mhinz/vim-startify'
     use 'tomasiser/vim-code-dark'
+    use 'tribela/vim-transparent'
 end)
