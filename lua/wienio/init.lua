@@ -5,7 +5,6 @@ require("nvim-lightbulb").setup({
   autocmd = { enabled = true }
 })
 vim.o.background = "dark"
-local c = require('vscode.colors').get_colors()
 require("mason").setup()
 require("mason-nvim-dap").setup()
 require("dapui").setup()
@@ -19,7 +18,7 @@ end
 polish()
 vim.notify = require('notify')
 require("notify")("init.lua loaded successfully")
-vim.cmd('colorscheme gruvbox')
+vim.cmd('colorscheme NeoSolarized')
 
 
 
