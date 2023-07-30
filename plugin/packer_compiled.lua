@@ -144,6 +144,19 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim",
+    url = "https://github.com/nvimdev/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -163,6 +176,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -214,6 +233,11 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -261,11 +285,6 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/rstacruz/vim-closer"
   },
-  ["vim-closetag"] = {
-    loaded = true,
-    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-closetag",
-    url = "https://github.com/alvan/vim-closetag"
-  },
   ["vim-code-dark"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-code-dark",
@@ -276,15 +295,15 @@ _G.packer_plugins = {
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-react-snippets"] = {
+    loaded = true,
+    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-react-snippets",
+    url = "https://github.com/mlaursen/vim-react-snippets"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-startify",
     url = "https://github.com/mhinz/vim-startify"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/wienio/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-transparent"] = {
     loaded = true,
@@ -303,10 +322,23 @@ time([[Defining packer_plugins]], false)
 time([[Config for overseer.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\roverseer\frequire\0", "config", "overseer.nvim")
 time([[Config for overseer.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-lspconfig ]]
+vim.cmd [[ packadd lspsaga.nvim ]]
+
+-- Config for: lspsaga.nvim
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -45,8 +45,6 @@ return require('packer').startup(function(use)
 
     }
     use {"akinsho/toggleterm.nvim", tag = '*', config = function() require("toggleterm").setup() end}
-    use 'alvan/vim-closetag'
-    use 'tpope/vim-surround'
     use 'rafamadriz/friendly-snippets'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rcarriga/nvim-dap-ui'
@@ -68,4 +66,18 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-startify'
     use 'tomasiser/vim-code-dark'
     use 'tribela/vim-transparent'
+    use ({
+    'nvimdev/lspsaga.nvim',
+    after = 'nvim-lspconfig',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+})
+use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
+use 'windwp/nvim-ts-autotag'
+use 'mlaursen/vim-react-snippets'
+use 'onsails/lspkind.nvim'
 end)
