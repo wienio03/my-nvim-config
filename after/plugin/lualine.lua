@@ -2,7 +2,7 @@ local custom_gruvbox = require'lualine.themes.papercolor_dark'
 
 require('lualine').setup {
   options = {
-    theme = 'vscode',
+    theme = 'solarized',
     icons_enabled = true,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},

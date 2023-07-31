@@ -60,7 +60,6 @@ return require('packer').startup(function(use)
       config = function() require('overseer').setup() end
     }
     use 'stevearc/dressing.nvim'
-    use "rcarriga/nvim-notify"
     use 'Dhanus3133/LeetBuddy.nvim'
     use 'neanias/everforest-nvim'
     use 'mhinz/vim-startify'
@@ -73,10 +72,7 @@ return require('packer').startup(function(use)
         require('lspsaga').setup({})
     end,
 })
-use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-}
 use 'onsails/lspkind.nvim'
+use 'windwp/nvim-ts-autotag'
 use 'overcache/NeoSolarized'
 end)
