@@ -1,6 +1,4 @@
 # my-nvim-config
-My neovim config in Lua.
-The makes nvim config is similar to VS Code.
-I don't plan on changing anything else soon.
-To install it just clone the repo into your .config as nvim and run :so on the init.lua file, then :Lazy.
-Last change was switching from packer.nvim to lazy.nvim.
+My neovim config in Lua. The nvim config 
+provides full LSP support, debugging with a configurable UI, built-in compiler for each language and some useful snippets to make your code writing faster. The plugin manager is lazy.nvim. The config is inspired by various other configs i found on the site.
+To install it just clone the repo into your .config and name the folder "nvim". Then run :so on the init.lua file and follow it up with :Lazy. Restart your Neovim and you are good to go 🙂.
