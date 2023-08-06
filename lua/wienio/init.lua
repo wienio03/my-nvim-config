@@ -116,6 +116,7 @@ require("lazy").setup({
     'tomasiser/vim-code-dark',
     'overcache/NeoSolarized',
     'Zeioth/compiler.nvim',
+    'ellisonleao/gruvbox.nvim',
 
     { "lukas-reineke/indent-blankline.nvim" },
 
@@ -199,9 +200,9 @@ require("nvim-treesitter.configs").setup({
                 ["aa"] = "@parameter.outer",
                 ["ia"] = "@parameter.inner",
                 ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
                 ["ac"] = "@class.outer",
                 ["ic"] = "@class.inner",
+                [ "if"] = "@function.inner",
             },
         },
         move = {
@@ -235,7 +236,7 @@ require("nvim-treesitter.configs").setup({
         },
     },
 })
-vim.cmd('colorscheme NeoSolarized')
+vim.cmd('colorscheme gruvbox')
 require("nvim-lightbulb").setup({
     autocmd = { enabled = true }
 })
@@ -637,33 +638,33 @@ require('dressing').setup({
     },
 
 })
-local c = require('vscode.colors').get_colors()
-require('vscode').setup({
-    -- Alternatively set style in setup
-    -- style = 'light'
-
-    -- Enable transparent background
-    transparent = true,
-
-    -- Enable italic comment
-    italic_comments = true,
-
-    -- Disable nvim-tree background color
-    disable_nvimtree_bg = true,
-
-    -- Override colors (see ./lua/vscode/colors.lua)
-    color_overrides = {
-        vscLineNumber = '#FFFFFF',
-    },
-
-    -- Override highlight groups (see ./lua/vscode/theme.lua)
-    group_overrides = {
-        -- this supports the same val table as vim.api.nvim_set_hl
-        -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-    }
-})
-require('vscode').load()
+-- local c = require('vscode.colors').get_colors()
+-- require('vscode').setup({
+--     -- Alternatively set style in setup
+--     -- style = 'light'
+--
+--     -- Enable transparent background
+--     transparent = true,
+--
+--     -- Enable italic comment
+--     italic_comments = true,
+--
+--     -- Disable nvim-tree background color
+--     disable_nvimtree_bg = true,
+--
+--     -- Override colors (see ./lua/vscode/colors.lua)
+--     color_overrides = {
+--         vscLineNumber = '#FFFFFF',
+--     },
+--
+--     -- Override highlight groups (see ./lua/vscode/theme.lua)
+--     group_overrides = {
+--         -- this supports the same val table as vim.api.nvim_set_hl
+--         -- use colors from this colorscheme by requiring vscode.colors!
+--         Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+--     }
+-- })
+-- require('vscode').load()
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
