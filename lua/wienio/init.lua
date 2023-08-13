@@ -1,13 +1,4 @@
-require('wienio.remap')
-require('wienio.set')
-vim.o.background = "dark"
-require("mason").setup()
-require("mason-nvim-dap").setup()
-require("dapui").setup()
-vim.opt.termguicolors = true
-print('init.lua loaded')
 
---LAZY.NVIM
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -15,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
@@ -23,8 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { -- LSP Configuration & Plugins
-        "neovim/nvim-lspconfig",
+    {        "neovim/nvim-lspconfig",
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -33,8 +23,7 @@ require("lazy").setup({
         },
     },
 
-    { -- Autocompletion
-        "hrsh7th/nvim-cmp",
+    {         "hrsh7th/nvim-cmp",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
@@ -47,7 +36,7 @@ require("lazy").setup({
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
 
-    { -- Highlight, edit, and navigate code
+    { 
         "nvim-treesitter/nvim-treesitter",
         build = function()
             pcall(require("nvim-treesitter.install").update({ with_sync = true }))
@@ -57,35 +46,26 @@ require("lazy").setup({
     {
         'romgrk/barbar.nvim',
         dependencies = {
-            'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
-            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+            'lewis6991/gitsigns.nvim',     
+            'nvim-tree/nvim-web-devicons', 
         },
         init = function() vim.g.barbar_auto_setup = false end,
         opts = {
-            -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-            -- animation = true,
-            -- insert_at_start = true,
-            -- …etc.
         },
-        version = '^1.0.0', -- optional: only update when a new 1.x version is released
+        version = '^1.0.0', 
     },
 
-    -- Git related plugins
     { "tpope/vim-fugitive",             lazy = true },
     { "tpope/vim-rhubarb",              lazy = true },
     { "lewis6991/gitsigns.nvim",        lazy = true },
 
-    -- "gc" to comment visual regions/lines
     { "numToStr/Comment.nvim" },
 
-    -- null_ls
     { "jose-elias-alvarez/null-ls.nvim" },
 
-    -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.2',
-        -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { 'akinsho/toggleterm.nvim',            version = "*", config = true },
@@ -372,8 +352,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     debug = false,
     sources = {
-        formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }), -- "--no-semi",
-        -- formatting.black,
+        formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }), 
         formatting.autopep8.with({
             extra_args = { "--indent-size=2", "--ignore=E121", "--ignore=E305" },
         }),
@@ -423,7 +402,6 @@ require('compiler').setup()
 vim.keymap.set('n', '<leader>co', vim.cmd.CompilerOpen)
 vim.keymap.set('n', '<leader>ct', vim.cmd.CompilerToggleResults)
 
---bindings
 vim.api.nvim_set_keymap('n', '<leader>dt', ':lua require("dapui").open()<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>dc', ':lua require("dapui").close()<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>db', vim.cmd.DapToggleBreakpoint)
@@ -432,7 +410,6 @@ vim.keymap.set('n', '<leader><F7>', vim.cmd.DapStepInto)
 vim.keymap.set('n', '<leader><F6>', vim.cmd.DapStepOver)
 vim.keymap.set('n', '<leader><F5>', vim.cmd.DapStepOut)
 vim.keymap.set('n', '<leader>dx', vim.cmd.DapTerminate)
---configuration of CPP debugger
 local dap_ok, dap = pcall(require, "dap")
 if not (dap_ok) then
     print("nvim-dap not installed!")
@@ -475,48 +452,33 @@ dap.adapters.lldb = {
 }
 require('dressing').setup({
     input = {
-        -- Set to false to disable the vim.ui.input implementation
         enabled = true,
 
-        -- Default prompt string
         default_prompt = "Input:",
 
-        -- Can be 'left', 'right', or 'center'
         title_pos = "left",
 
-        -- When true, <Esc> will close the modal
         insert_only = true,
 
-        -- When true, input will start in insert mode.
         start_in_insert = true,
 
-        -- These are passed to nvim_open_win
         border = "rounded",
-        -- 'editor' and 'win' will default to being centered
         relative = "cursor",
 
-        -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
         prefer_width = 40,
         width = nil,
-        -- min_width and max_width can be a list of mixed types.
-        -- min_width = {20, 0.2} means "the greater of 20 columns or 20% of total"
         max_width = { 140, 0.9 },
         min_width = { 20, 0.2 },
 
         buf_options = {},
         win_options = {
-            -- Window transparency (0-100)
             winblend = 10,
-            -- Disable line wrapping
             wrap = false,
-            -- Indicator for when text exceeds window
             list = true,
             listchars = "precedes:…,extends:…",
-            -- Increase this for more context when text scrolls off the window
             sidescrolloff = 0,
         },
 
-        -- Set to `false` to disable
         mappings = {
             n = {
                 ["<Esc>"] = "Close",
@@ -531,30 +493,20 @@ require('dressing').setup({
         },
 
         override = function(conf)
-            -- This is the config that will be passed to nvim_open_win.
-            -- Change values here to customize the layout
             return conf
         end,
 
-        -- see :help dressing_get_config
         get_config = nil,
     },
     select = {
-        -- Set to false to disable the vim.ui.select implementation
         enabled = true,
 
-        -- Priority list of preferred vim.select implementations
         backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
 
-        -- Trim trailing `:` from prompt
         trim_prompt = true,
 
-        -- Options for telescope selector
-        -- These are passed into the telescope picker directly. Can be used like:
-        -- telescope = require('telescope.themes').get_ivy({...})
         telescope = nil,
 
-        -- Options for fzf selector
         fzf = {
             window = {
                 width = 0.5,
@@ -562,15 +514,9 @@ require('dressing').setup({
             },
         },
 
-        -- Options for fzf-lua
         fzf_lua = {
-            -- winopts = {
-            --   height = 0.5,
-            --   width = 0.5,
-            -- },
         },
 
-        -- Options for nui Menu
         nui = {
             position = "50%",
             size = nil,
@@ -591,24 +537,17 @@ require('dressing').setup({
             min_height = 10,
         },
 
-        -- Options for built-in selector
         builtin = {
-            -- These are passed to nvim_open_win
             border = "rounded",
-            -- 'editor' and 'win' will default to being centered
             relative = "editor",
 
             buf_options = {},
             win_options = {
-                -- Window transparency (0-100)
                 winblend = 10,
                 cursorline = true,
                 cursorlineopt = "both",
             },
 
-            -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-            -- the min_ and max_ options can be a list of mixed types.
-            -- max_width = {140, 0.8} means "the lesser of 140 columns or 80% of total"
             width = nil,
             max_width = { 140, 0.8 },
             min_width = { 40, 0.2 },
@@ -616,7 +555,6 @@ require('dressing').setup({
             max_height = 0.9,
             min_height = { 10, 0.2 },
 
-            -- Set to `false` to disable
             mappings = {
                 ["<Esc>"] = "Close",
                 ["<C-c>"] = "Close",
@@ -624,47 +562,15 @@ require('dressing').setup({
             },
 
             override = function(conf)
-                -- This is the config that will be passed to nvim_open_win.
-                -- Change values here to customize the layout
                 return conf
             end,
         },
-
-        -- Used to override format_item. See :help dressing-format
         format_item_override = {},
 
-        -- see :help dressing_get_config
         get_config = nil,
     },
 
 })
--- local c = require('vscode.colors').get_colors()
--- require('vscode').setup({
---     -- Alternatively set style in setup
---     -- style = 'light'
---
---     -- Enable transparent background
---     transparent = true,
---
---     -- Enable italic comment
---     italic_comments = true,
---
---     -- Disable nvim-tree background color
---     disable_nvimtree_bg = true,
---
---     -- Override colors (see ./lua/vscode/colors.lua)
---     color_overrides = {
---         vscLineNumber = '#FFFFFF',
---     },
---
---     -- Override highlight groups (see ./lua/vscode/theme.lua)
---     group_overrides = {
---         -- this supports the same val table as vim.api.nvim_set_hl
---         -- use colors from this colorscheme by requiring vscode.colors!
---         Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
---     }
--- })
--- require('vscode').load()
 
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
 
@@ -726,3 +632,13 @@ vim.keymap.set('n', '<leader>pf', function()
 end, {})
 vim.keymap.set('n', '<leader>tt', vim.cmd.ToggleTerm)
 vim.keymap.set('n', "<leader>u", vim.cmd.UndotreeToggle)
+
+
+require('wienio.remap')
+require('wienio.set')
+vim.o.background = "dark"
+require("mason").setup()
+require("mason-nvim-dap").setup()
+require("dapui").setup()
+vim.opt.termguicolors = true
+print('init.lua loaded')
