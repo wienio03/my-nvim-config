@@ -192,7 +192,7 @@ _G.packer_plugins = {
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/wienio/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfusenegger/nvim-dap"
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-ui"] = {
     loaded = true,
