@@ -6,7 +6,7 @@ Plugin manager : Packer.nvim
 
 The config installs automatically when you open Neovim. All you have to do is run these commands: 
 
-'''
+```
 cd .config
 git clone "https://github.com/wienio03/my-nvim-config.git" nvim
-'''
+```
