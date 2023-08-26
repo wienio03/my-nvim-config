@@ -72,4 +72,21 @@ lspconfig["tsserver"].setup({
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	filetypes = { "c", "cpp" },
+})
+lspconfig["vimls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+lspconfig["custom_elements_ls"].setup({
+	capabilites = capabilities,
+	on_attach = on_attach,
+})
+lspconfig["cssmodules_ls"].setup({
+	capabilites = capabilities,
+	on_attach = on_attach,
+})
+lspconfig["cssls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
 })

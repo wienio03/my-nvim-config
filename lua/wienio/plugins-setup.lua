@@ -68,6 +68,7 @@ return packer.startup(function(use)
 	use("brenoprata10/nvim-highlight-colors")
 	use("stevearc/dressing.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
+	use("mhinz/vim-startify")
 	if packer_bootstrap then
 		require("packer").sync()
 	end
