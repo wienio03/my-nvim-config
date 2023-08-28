@@ -18,4 +18,4 @@ require("wienio.plugins.dressing")
 require("wienio.plugins.dap")
 require("wienio.plugins.colors")
 require("wienio.plugins.indent-blankline")
-
+require("wienio.plugins.toggleterm")

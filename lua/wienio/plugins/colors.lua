@@ -1,9 +1,19 @@
-local status, hl = pcall(require, "nvim-highlight-colors")
+local status, hl = pcall(require, "colorizer")
 
-if not status then return end
+if not status then
+	return
+end
 
-hl.setup({	render = 'background',
-	enable_named_colors = true,
-	enable_tailwind = true,
-	custom_colors = {},
+hl.setup({
+	DEFAULT_OPITONS = {
+		RRGGBBAA = true,
+		rgb_fn = true,
+		hsl_fn = true,
+		css = true,
+		css_fn = true,
+	},
+	"css",
+	"javascript",
+	"javascriptreact",
+	"html",
 })

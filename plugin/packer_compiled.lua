@@ -189,6 +189,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
@@ -198,11 +203,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-highlight-colors"] = {
-    loaded = true,
-    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-highlight-colors",
-    url = "https://github.com/brenoprata10/nvim-highlight-colors"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -249,10 +249,20 @@ _G.packer_plugins = {
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["typescript.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
+  },
+  undotree = {
+    loaded = true,
+    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
+    url = "https://github.com/mbbill/undotree"
   },
   ["vim-maximizer"] = {
     loaded = true,
@@ -263,6 +273,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-startify",
     url = "https://github.com/mhinz/vim-startify"
+  },
+  ["vim-sublime-monokai"] = {
+    loaded = true,
+    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-sublime-monokai",
+    url = "https://github.com/ErichDonGubler/vim-sublime-monokai"
   },
   ["vim-surround"] = {
     loaded = true,
