@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["leetcode.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\leetcode.vim",
+    url = "https://github.com/ianding1/leetcode.vim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "C:\\Users\\joann\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lspkind.nvim",
