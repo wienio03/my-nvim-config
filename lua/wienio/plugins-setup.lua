@@ -68,11 +68,9 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 	use("stevearc/dressing.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
-	use("mhinz/vim-startify")
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("ErichDonGubler/vim-sublime-monokai")
 	use("mbbill/undotree")
-	use("ianding1/leetcode.vim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end
