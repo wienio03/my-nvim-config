@@ -29,6 +29,5 @@ opt.clipboard:append("unnamedplus")
 opt.splitright = true
 opt.splitbelow = true
 
-
 --this considers the - sign as part of a word in neovim now
 opt.iskeyword:append("-")
