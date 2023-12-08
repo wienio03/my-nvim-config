@@ -73,6 +73,7 @@ return packer.startup(function(use)
 	use({ "akinsho/toggleterm.nvim", tag = "*" })
 	use("ErichDonGubler/vim-sublime-monokai")
 	use("mbbill/undotree")
+  use("rose-pine/neovim")
 	if packer_bootstrap then
 		require("packer").sync()
 	end

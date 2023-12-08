@@ -73,6 +73,10 @@ lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 	filetypes = { "c", "cpp" },
+	cmd = {
+		"clangd",
+		"--offset-encoding-utf-16",
+	},
 })
 lspconfig["vimls"].setup({
 	capabilities = capabilities,
@@ -87,6 +91,10 @@ lspconfig["cssmodules_ls"].setup({
 	on_attach = on_attach,
 })
 lspconfig["cssls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+lspconfig["rust_analyzer"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
